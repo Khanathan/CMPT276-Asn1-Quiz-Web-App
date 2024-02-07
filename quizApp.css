@@ -1,5 +1,5 @@
 html {
-    font-size: 2vw;
+    font-size: 1vw;
     font-family: "Roboto", Helvetica, sans-serif;
     width: 100%;
 }
@@ -19,7 +19,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10vh;
+    padding-top: 10vh;
     height: 90vh;
 }
 
