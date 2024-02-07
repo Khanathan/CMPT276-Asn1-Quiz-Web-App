@@ -36,7 +36,7 @@ form {
     flex-wrap: wrap;
 
     background-color: rgb(255, 255, 255);
-    opacity: 60%;
+    opacity: 65%;
     border-radius: 0.9rem;
     box-shadow: 0.45rem 0.45rem 0.22rem 0.2rem rgba(214, 17, 115, 0.495);
 }
@@ -102,5 +102,5 @@ img {
     margin-top: 0.75rem;
     background: transparent;
     height: 2.5rem;
-    opacity: 0.94;
+    opacity: 94%;
 }
