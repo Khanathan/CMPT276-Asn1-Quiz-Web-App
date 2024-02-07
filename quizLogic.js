@@ -66,8 +66,15 @@ function showQuestion() {
 
     questionPrompt.textContent = currentQuestion.prompt;
 
+    //Change text of answer choices
     for (let i = 0; i < 4; i++) {
         labels[i].textContent = currentQuestion.options[i];
+        if (quizDone && (currentQuestion.answer == "abcd" || (currentQuestion.answer.charCodeAt(0) - 97) == i)) {
+            labels[i].textContent += "✔️";
+        } else if (quizDone && (!currentQuestion.answer.includes(currentQuestion.chosenAnswer))
+            && (currentQuestion.chosenAnswer.charCodeAt(0) - 97) == i) {
+            labels[i].textContent += "❌";
+        }
     }
 
     //After result is out, tick the end if answer is correct
@@ -75,6 +82,8 @@ function showQuestion() {
     if (currentQuestion.chosenAnswer.localeCompare("") != 0) {
         const lastChosenButton = document.getElementById(currentQuestion.chosenAnswer);
         lastChosenButton.checked = true;
+        //add an X at the end if incorrect
+
     } else {
         unCheck();
     }
@@ -102,7 +111,7 @@ function unCheck() {
 //function for going to previous question, doesn't allow if at question 0
 function lastQuestion() {
     if (currentQuestionIndex > MIN_INDEX) {
-        saveAnswer();
+        if (!quizDone) saveAnswer();
         currentQuestionIndex--;
         showQuestion();
     }
@@ -111,7 +120,7 @@ function lastQuestion() {
 //function for going to next question, doesn't allow if at question MAX
 function nextQuestion() {
     if (currentQuestionIndex <= MAX_INDEX) {
-        saveAnswer();
+        if (!quizDone) saveAnswer();
         //non-last question
         if (currentQuestionIndex < MAX_INDEX) {
             //check if an answer is chosen, only go to next question if there is an answer chosen
@@ -124,6 +133,7 @@ function nextQuestion() {
         //last question 
         else {
             showResult();
+            showQuestion();
         }
     }
 }
