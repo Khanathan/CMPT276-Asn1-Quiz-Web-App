@@ -129,10 +129,27 @@ function nextQuestion() {
 }
 
 function showResult() {
+    let point = getPoint();
+
     quizDone = true;
+
+    document.getElementById("points").textContent = "Your Points: " + point + "/" + (MAX_INDEX + 1);
+    document.getElementById("score").textContent = "Your Score: " + (point / (MAX_INDEX + 1) * 100).toFixed(2) + "%";
+
     document.getElementById("results").style.visibility = "visible";
 }
 
+function getPoint() {
+    let point = 0;
+    for (let i = 0; i <= MAX_INDEX; i++) {
+        let solution = questions[i].answer;
+        let chosen = questions[i].chosenAnswer;
+        if (solution.includes(chosen)) {
+            point++;
+        }
+    }
+    return point;
+}
 //result section, maybe make it disabled until the final question is submitted. Once reaches here, disable submit button.
 
 showQuestion();
