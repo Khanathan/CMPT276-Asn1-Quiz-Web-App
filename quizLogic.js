@@ -100,16 +100,20 @@ function unCheck() {
 
 //function for going to previous question, doesn't allow if at question 0
 function lastQuestion() {
-    saveAnswer();
-    currentQuestionIndex--;
-    showQuestion();
+    if (currentQuestionIndex > MIN_INDEX) {
+        saveAnswer();
+        currentQuestionIndex--;
+        showQuestion();
+    }
 }
 
 //function for going to next question, doesn't allow if at question MAX
 function nextQuestion() {
-    saveAnswer();
-    currentQuestionIndex++;
-    showQuestion();
+    if (currentQuestionIndex < MAX_INDEX) {
+        saveAnswer();
+        currentQuestionIndex++;
+        showQuestion();
+    }
 }
 
 //result section, maybe make it disabled until the final question is submitted. Once reaches here, disable submit button.
