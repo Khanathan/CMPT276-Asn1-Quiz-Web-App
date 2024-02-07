@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>💯 Interactive Quiz 💯</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quizApp.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header id="test">💯 Interactive Quiz 💯</header>
+        <div class="question-form">
+            <h2 id="question-number">Question 1 of 10</h2>
+            <h3 id="question-prompt">Please answer the following question: What is the correct answer?</h3>
+            <form>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="a" value="a" class="answer">
+                        <label for="answerA" id="label-a">A. a</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="b" value="b" class="answer">
+                        <label for="answerB" id="label-b">B. b</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="c" value="c" class="answer">
+                        <label for="answerC" id="label-c">C. c</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="d" value="d" class="answer">
+                        <label for="answerD" id="label-d">D. d</label>
+                    </li>
+                </ul>
+
+                <div class="button-container">
+                    <input type="button" value="«" class="nav-button" id="last--button">
+                    <input type="button" value="»" class="nav-button" id="next--button">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="quizLogic.js"></script>
+</body>
+
+</html>

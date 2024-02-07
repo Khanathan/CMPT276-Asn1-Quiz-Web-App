@@ -1,0 +1,88 @@
+html {
+    font-size: 1.2rem;
+    font-family: "Roboto", Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #d06bff6a, #cb68d821);
+}
+
+header {
+    text-align: center;
+    margin: 1rem;
+    font-size: 200%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20vh;
+    height: 80vh;
+}
+
+/*  Setting width helps the submit buttons render properly  */
+form {
+    width: 100%;
+}
+
+.question-form {
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.7rem;
+    flex-wrap: wrap;
+
+    background-color: rgb(255, 255, 255);
+    opacity: 60%;
+    border-radius: 0.9rem;
+    box-shadow: 0.45rem 0.45rem 0.22rem 0.2rem rgba(214, 17, 115, 0.495);
+}
+
+h2 {
+    font-size: 120%;
+    margin: 0;
+}
+
+h3 {
+    font-size: 110%;
+    margin: 0.5rem 0rem 0rem 0rem;
+}
+
+ul {
+    padding-left: 0;
+    margin: 1rem 1rem 1rem 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0rem 0 0.3rem 0.4rem;
+    gap: 0.15rem;
+}
+
+.button-container * {
+    width: 3.8rem;
+    height: 1.75rem;
+    font-size: 90%;
+    opacity: 95%;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.46rem;
+}
+
+input[type=radio] {
+    border: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    accent-color: rgba(136, 0, 255, 0.923);
+}
