@@ -39,7 +39,7 @@ let questions = [
 ];
 
 const MIN_INDEX = 0;
-const MAX_INDEX = 5; //max question index, update when adding new questions
+const MAX_INDEX = questions.length - 1; //max question index, update when adding new questions
 const questionNum = document.getElementById("question-number");
 const questionPrompt = document.getElementById("question-prompt");
 const submitButton = document.getElementById("submit--button");
@@ -54,6 +54,7 @@ document.getElementById("label-d")];
 let currentQuestionIndex = 0;
 let score = 0;
 let answerChoice = "";
+let quizDone = false;
 
 //function for showing the question, if there is a chosen answer (not empty string), put a tick at the end for correct answer and a red x if incorrect
 //change the question number (1 of 10), change the question prompt and each choice.
@@ -109,11 +110,27 @@ function lastQuestion() {
 
 //function for going to next question, doesn't allow if at question MAX
 function nextQuestion() {
-    if (currentQuestionIndex < MAX_INDEX) {
+    if (currentQuestionIndex <= MAX_INDEX) {
         saveAnswer();
-        currentQuestionIndex++;
-        showQuestion();
+        //non-last question
+        if (currentQuestionIndex < MAX_INDEX) {
+            //check if an answer is chosen, only go to next question if there is an answer chosen
+            chosenAnswer = document.querySelector('input[name="answer"]:checked');
+            if (chosenAnswer != null) {
+                currentQuestionIndex++;
+                showQuestion();
+            }
+        }
+        //last question 
+        else {
+            showResult();
+        }
     }
+}
+
+function showResult() {
+    quizDone = true;
+    document.getElementById("results").style.visibility = "visible";
 }
 
 //result section, maybe make it disabled until the final question is submitted. Once reaches here, disable submit button.
